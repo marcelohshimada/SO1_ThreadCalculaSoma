@@ -4,22 +4,21 @@ public class ThreadSoma extends Thread {
 
 	private int[] vetor;
 	
-	
 	public ThreadSoma(int[] vetor) {
 		this.vetor = vetor;
 	}
 	
-	@Override
+	@Override // Obrigatoriedade de executar método run()
 	public void run() {
-		somaLinha();
+		somaLinha(); 
 	}
 	
-	private void somaLinha() {
-		int somatoria = 0;
+	private void somaLinha() { // Método que Calcula a soma dos números na linha
+		int somatoria = 0; // Inicia a variável com valor de 0
 		
 		for (int i = 0; i < vetor.length; i++) {
 			somatoria += vetor[i];
 		}
-		System.out.println("ID Thread #" + getId() + " ==> Somatória = " + somatoria);
+		System.out.println("Somatória da linha referente a Thread ID " + getId() + " = " + somatoria);
 	}
 }
