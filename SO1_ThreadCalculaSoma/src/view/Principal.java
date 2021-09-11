@@ -22,16 +22,15 @@ public class Principal {
 				
 				vetor[i][j] = num; // o numero é armazenado no vetor de acordo com a posicao [i][j]
 				
-				System.out.print(vetor[i][j] + " "); // Imprime o numero refente a posição com espaçamento para o próximo
+				System.out.print(vetor[i][j] + "\t"); // Imprime o numero refente a posição com espaçamento para o próximo
 			}
 		}
 		
 		System.out.println();
-		System.out.println();
-
-		Thread tCalc1 = new ThreadSoma(vetor[0]); // Inicia a Thread na primeira linha
-		Thread tCalc2 = new ThreadSoma(vetor[1]); // Inicia a Thread na segunda linha
-		Thread tCalc3 = new ThreadSoma(vetor[2]); // Inicia a Thread na terceira linha
+		
+		Thread tCalc1 = new ThreadSoma(vetor[0],0); // Inicia a Thread na primeira linha
+		Thread tCalc2 = new ThreadSoma(vetor[1],1); // Inicia a Thread na segunda linha
+		Thread tCalc3 = new ThreadSoma(vetor[2],2); // Inicia a Thread na terceira linha
 
 		tCalc1.start();
 		tCalc2.start();

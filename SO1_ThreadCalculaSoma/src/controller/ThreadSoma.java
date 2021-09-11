@@ -3,9 +3,11 @@ package controller;
 public class ThreadSoma extends Thread {
 
 	private int[] vetor;
+	private int idLinha;
 	
-	public ThreadSoma(int[] vetor) {
+	public ThreadSoma(int[] vetor, int idLinha) {
 		this.vetor = vetor;
+		this.idLinha = idLinha;
 	}
 	
 	@Override // Obrigatoriedade de executar método run()
@@ -19,6 +21,6 @@ public class ThreadSoma extends Thread {
 		for (int i = 0; i < vetor.length; i++) {
 			somatoria += vetor[i];
 		}
-		System.out.println("Somatória da linha referente a Thread ID " + getId() + " = " + somatoria);
+		System.out.println("Somatória da linha #" + idLinha + " = " + somatoria);
 	}
 }
